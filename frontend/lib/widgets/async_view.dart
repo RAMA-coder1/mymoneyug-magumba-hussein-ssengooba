@@ -117,7 +117,7 @@ class ErrorState extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(offline ? LucideIcons.cloudOff : LucideIcons.alertCircle,
-                  size: 56, color: AppColors.navy),
+                  size: 56, color: AppColors.text),
               const SizedBox(height: 16),
               Text(offline ? 'No internet / server off' : 'Something went wrong',
                   style: Theme.of(context).textTheme.titleMedium),

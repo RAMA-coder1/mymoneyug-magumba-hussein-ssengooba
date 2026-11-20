@@ -90,7 +90,7 @@ class _AccountsScreenState extends State<AccountsScreen> {
                   leading: CircleAvatar(
                     backgroundColor: AppColors.paleBlue,
                     child: Icon(Account.iconFor(a.accountType),
-                        color: AppColors.navy),
+                        color: AppColors.text),
                   ),
                   title: Text(a.name),
                   subtitle: Text(Account.typeLabel(a.accountType)),
@@ -133,7 +133,7 @@ class AccountDetailScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: AppColors.navy,
+                  color: AppColors.text,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(

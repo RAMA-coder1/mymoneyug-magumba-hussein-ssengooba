@@ -85,7 +85,7 @@ class _MonthlySummaryScreenState extends State<MonthlySummaryScreen> {
                     Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: AppColors.navy,
+                        color: AppColors.text,
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Column(

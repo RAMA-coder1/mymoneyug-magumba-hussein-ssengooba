@@ -120,7 +120,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Account.iconFor(a.accountType),
-                                  color: AppColors.navy),
+                                  color: AppColors.text),
                               const SizedBox(height: 6),
                               Text(a.name,
                                   maxLines: 1,
@@ -185,7 +185,7 @@ class _BalanceCard extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: AppColors.navy,
+          color: AppColors.text,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -295,7 +295,7 @@ class _SpendingByCategory extends StatelessWidget {
                             child: LinearProgressIndicator(
                               value: e.value / max,
                               minHeight: 8,
-                              color: AppColors.navy,
+                              color: AppColors.text,
                               backgroundColor: AppColors.paleBlue,
                             ),
                           ),
