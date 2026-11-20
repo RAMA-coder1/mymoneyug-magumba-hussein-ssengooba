@@ -78,7 +78,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         Text(title, style: Theme.of(context).textTheme.titleMedium),
         const SizedBox(height: 8),
         if (items.isEmpty)
-          const Text('None yet.')
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: EmptyState(
+              icon: icon,
+              message: 'No ${title.toLowerCase()} yet.',
+            ),
+          )
         else
           Card(
             child: Column(

@@ -185,8 +185,19 @@ class _BalanceCard extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: AppColors.text,
-          borderRadius: BorderRadius.circular(16),
+          gradient: const LinearGradient(
+            colors: [AppColors.primary, AppColors.primaryDark],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.primary.withValues(alpha: 0.25),
+              blurRadius: 18,
+              offset: const Offset(0, 10),
+            ),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,7 +208,7 @@ class _BalanceCard extends StatelessWidget {
             Text(
               ugx(summary.totalBalance),
               style: const TextStyle(
-                  color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+                  color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 6),
             const Text('Based on the transactions you have recorded',
@@ -295,7 +306,7 @@ class _SpendingByCategory extends StatelessWidget {
                             child: LinearProgressIndicator(
                               value: e.value / max,
                               minHeight: 8,
-                              color: AppColors.text,
+                               color: AppColors.primary,
                               backgroundColor: AppColors.paleBlue,
                             ),
                           ),

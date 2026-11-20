@@ -116,8 +116,8 @@ class ErrorState extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(offline ? LucideIcons.cloudOff : LucideIcons.alertCircle,
-                  size: 56, color: AppColors.text),
+Icon(offline ? LucideIcons.cloudOff : LucideIcons.alertCircle,
+    size: 56, color: AppColors.primary),
               const SizedBox(height: 16),
               Text(offline ? 'No internet / server off' : 'Something went wrong',
                   style: Theme.of(context).textTheme.titleMedium),
@@ -144,13 +144,30 @@ class EmptyState extends StatelessWidget {
   Widget build(BuildContext context) => Center(
         child: Padding(
           padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(icon, size: 56, color: Colors.black38),
-              const SizedBox(height: 12),
-              Text(message, textAlign: TextAlign.center),
-            ],
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 64,
+                    height: 64,
+                    decoration: BoxDecoration(
+                      color: AppColors.paleBlue,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Icon(icon, size: 30, color: AppColors.primary),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    message,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: AppColors.muted),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       );

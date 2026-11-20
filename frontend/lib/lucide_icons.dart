@@ -19,6 +19,8 @@ class LucideIcons {
   static const eyeOff = IconData(0xf29d, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const inbox = IconData(0xf36a, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const layoutDashboard = IconData(0xf389, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
+  static const lock = IconData(0xf3ae, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
+  static const mail = IconData(0xf3b4, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const logOut = IconData(0xf3b0, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const pencil = IconData(0xf43d, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const plus = IconData(0xf45e, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
@@ -28,5 +30,6 @@ class LucideIcons {
   static const tag = IconData(0xf521, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const trash2 = IconData(0xf546, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const wallet = IconData(0xf588, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
+  static const user = IconData(0xf564, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
   static const alertCircle = IconData(0xf10b, fontFamily: 'Lucide', fontPackage: 'lucide_icons');
 }
