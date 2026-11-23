@@ -11,6 +11,14 @@ MyMoneyUG is a personal finance tracking app for students and everyday users. It
 - Dashboard summaries and monthly reports
 - Responsive Flutter UI for web, desktop, and mobile
 
+## UI/UX
+
+- Light-blue theme with Inter font and Lucide icons
+- Polished login and registration screens with logo and cross-links
+- Organized home, transactions, and categories layouts
+- Card-based empty states with icons
+- Redesigned form fields and account detail cards
+
 ## Tech Stack
 
 ### Backend
