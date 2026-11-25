@@ -98,11 +98,14 @@ class _AccountsScreenState extends State<AccountsScreen> {
                     b == null ? 'UGX —' : ugx(b.currentBalance),
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => AccountDetailScreen(account: a)),
-                  ),
+                  onTap: () async {
+                    final deleted = await Navigator.push<bool>(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => AccountDetailScreen(account: a)),
+                    );
+                    if (deleted == true && mounted) setState(() => _tick++);
+                  },
                 ),
               );
             },
@@ -122,7 +125,33 @@ class AccountDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final services = context.read<Services>();
     return Scaffold(
-      appBar: AppBar(title: Text(account.name)),
+      appBar: AppBar(
+        title: Text(account.name),
+        actions: [
+          IconButton(
+            icon: const Icon(LucideIcons.trash2),
+            tooltip: 'Delete account',
+            onPressed: () async {
+              final ok = await confirm(
+                context,
+                'Delete account?',
+                'This will remove ${account.name} and its transactions.',
+                action: 'Delete',
+              );
+              if (!ok || !context.mounted) return;
+              try {
+                await context.read<Services>().accounts.delete(account.id);
+                if (context.mounted) {
+                  showMessage(context, 'Account deleted.');
+                  Navigator.of(context).pop(true);
+                }
+              } on ApiException catch (e) {
+                if (context.mounted) showMessage(context, e.message, error: true);
+              }
+            },
+          ),
+        ],
+      ),
       body: AsyncView<AccountBalance>(
         load: () => services.accounts.balance(account.id),
         builder: (context, b, reload) => RefreshIndicator(

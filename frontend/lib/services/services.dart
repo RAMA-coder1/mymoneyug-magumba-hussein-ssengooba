@@ -49,6 +49,8 @@ class AccountService {
 
   Future<AccountBalance> balance(int id) async => AccountBalance.fromJson(
       await api.get('/accounts/$id/balance') as Map<String, dynamic>);
+
+  Future<void> delete(int id) => api.delete('/accounts/$id');
 }
 
 /// The API only supports create + list for categories (no PUT/DELETE).
