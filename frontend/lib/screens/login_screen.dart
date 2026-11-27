@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../services/api_client.dart';
 import '../services/auth_controller.dart';
+import '../widgets/async_view.dart';
 import '../widgets/theme.dart';
 import 'register_screen.dart';
 
@@ -39,10 +40,13 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     try {
       await context.read<AuthController>().login(_email.text, _password.text);
+      if (mounted) showMessage(context, 'Logged in successfully.');
     } on ApiException catch (e) {
       if (mounted) {
-        setState(() => _error =
-            e.status == 401 ? 'Incorrect email or password.' : e.message);
+        final message =
+            e.status == 401 ? 'Incorrect email or password.' : e.message;
+        setState(() => _error = message);
+        showMessage(context, message, error: true);
       }
     } finally {
       if (mounted) setState(() => _busy = false);
