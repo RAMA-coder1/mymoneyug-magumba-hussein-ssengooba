@@ -108,7 +108,7 @@ The API base URL defaults to `http://localhost:8000/api/v1` on web/desktop. Over
 
 ```bash
 flutter run -d chrome --dart-define=API_BASE_URL=http://192.168.1.50:8000/api/v1
-```
+``
 
 ## Startup Scripts (Windows)
 
