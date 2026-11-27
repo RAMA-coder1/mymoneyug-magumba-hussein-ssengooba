@@ -73,13 +73,13 @@ expenses-app/
 
 ## Backend Setup
 
-```bash
+``bash
 cd backend/fastapi-project
 python -m venv .venv
 .venv\Scripts\activate
 pip install fastapi[standard] python-dotenv sqlalchemy "python-jose[cryptography]" passlib
 python seed.py
-```
+``
 
 Create or update `backend/fastapi-project/.env`:
 
